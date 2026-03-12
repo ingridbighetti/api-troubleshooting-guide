@@ -13,7 +13,7 @@ Excluir Espaços: Confirmar se o cliente não incluiu espaços em branco acident
 Expiração: Validar se o token JWT não expirou (utilizando ferramentas como jwt.io para conferir o campo exp).
 
 # Exemplo de Resposta JSON de Erro:
-```
+```json
 {
   "error": "unauthorized",
   "message": "Invalid or expired token. Please generate a new API Key in your dashboard.",
@@ -29,9 +29,11 @@ Checklist de Investigação:
 Syntax Check: Validar se o endpoint está seguindo a estrutura correta (ex: /api/v1/orders/123 em vez de /api/v1/order/123).
 
 Database Query (SQL): Executar uma query no banco de dados para verificar o status do registro:
+```
 SELECT id, status, deleted_at 
 FROM orders 
 WHERE id = '123';
+```
 
 Soft Delete: Verificar se o campo deleted_at está preenchido (o dado existe no banco, mas foi "excluído" logicamente).
 
