@@ -13,11 +13,12 @@ Excluir Espaços: Confirmar se o cliente não incluiu espaços em branco acident
 Expiração: Validar se o token JWT não expirou (utilizando ferramentas como jwt.io para conferir o campo exp).
 
 # Exemplo de Resposta JSON de Erro:
-{
+```{
   "error": "unauthorized",
   "message": "Invalid or expired token. Please generate a new API Key in your dashboard.",
   "status": 401
 }
+```
 
 # 2. Recurso não Localizado (404 Not Found)
 Cenário: O cliente fornece um ID de pedido/usuário, mas o sistema diz que ele não existe.
