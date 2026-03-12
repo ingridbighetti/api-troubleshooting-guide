@@ -1,0 +1,43 @@
+{
+	"info": {
+		"name": "Support Troubleshooting Collection",
+		"description": "Coleção para testes de suporte L2/L3 simulando erros de API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check System Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simulate 401 Unauthorized",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "InvalidToken123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://httpstat.us/401",
+					"protocol": "https",
+					"host": ["httpstat", "us"],
+					"path": ["401"]
+				}
+			},
+			"response": []
+		}
+	]
+}
